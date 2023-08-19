@@ -37,7 +37,7 @@ export function generateMarkerG (width, height) {
  * @param {*} geoData list of suffixes to keep
  * @param {*} path d3.geoPath() with projection
  */
-export function addBackground(geoData, path) {
+export function addBackground (geoData, path) {
   d3.select('.fond').selectAll('.path')
     .data(geoData.features)
     .enter()
@@ -65,25 +65,25 @@ export function colorDomain (suffixes) {
  *
  * @param {object[]} data The communes to show
  * @param {*} color The color scaled used to determine the color of the circles
- * @param {*} projection The display panel, which should be dislayed when a circle is clicked
+ * @param {*} tip the tooltip object
  */
-export function mapMarkers (data, color, projection) {
+export function mapMarkers (data, color, tip) {
   d3.select('#marker-g').selectAll('circle')
     .data(data)
     .enter()
     .append('circle')
     .attr('class', 'marker')
-    // Their color corresponds to the type of site and their outline is white.
     .attr('fill', function (d) { return color(d.suffix) })
     .attr('stroke-width', 0.5)
     .attr('stroke', 'white')
     .attr('cx', function (d) { return d.x })
     .attr('cy', function (d) { return d.y })
-    // Their radius is 2 and goes up to 4 while hovered by the cursor.
     .attr('r', 2)
+    .on('mouseover', tip.show)
+    .on('mouseout', tip.hide)
     .on('mouseenter', function (d, event) {
       const currentMarker = d3.select(this)
-      currentMarker.attr('r', 4)
+      currentMarker.attr('r', 5)
     })
     .on('mouseleave', function (d, event) {
       const currentMarker = d3.select(this)
