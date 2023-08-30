@@ -11,7 +11,7 @@ export function generateMapG (width, height) {
     .attr('height', height)
     // fond de carte
     .append('g')
-    .attr('class', 'fond')
+    .attr('id', 'fond')
     .attr('width', width)
     .attr('height', height)
 }
@@ -38,7 +38,7 @@ export function generateMarkerG (width, height) {
  * @param {*} path d3.geoPath() with projection
  */
 export function addBackground (geoData, path) {
-  d3.select('.fond').selectAll('.path')
+  d3.select('#fond').selectAll('.path')
     .data(geoData.features)
     .enter()
     .append('path')
@@ -51,7 +51,7 @@ export function addBackground (geoData, path) {
  * Sets the domain of the color scale.
  *
  * @param {string[]} suffixes One suffix = one color (a color will have several suffixes if too many suffixes)
- * @returns colorScale, takes a string in argument and returns a color
+ * @returns {any} colorScale, takes a string in argument and returns a color
  */
 export function colorDomain (suffixes) {
   // Set the color domain
