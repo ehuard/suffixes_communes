@@ -8,7 +8,7 @@
     "start": "parcel ./src/index.html --log-level=2 --port=8080",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Olivia Gélinas",
+  "author": "Eric Huard",
   "license": "UNLICENSED",
   "dependencies": {
     "@turf/rewind": "^6.5.0",
