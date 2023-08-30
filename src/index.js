@@ -5,6 +5,7 @@ import * as map from './scripts/map.js'
 import * as preprocess from './scripts/preprocess.js'
 import * as legend from './scripts/legend.js'
 import * as tooltip from './scripts/tooltip.js'
+import * as hover from './scripts/hover.js'
 import d3Tip from 'd3-tip'
 
 const suffixes = ['ville', 'court', 'oy', 'ac']
@@ -45,6 +46,7 @@ export function buildMap () {
   const data2 = preprocess.filterBySuffixe(suffixes, csvData, projection)
   map.mapMarkers(data2, colorScale, tip)
   legend.draw(colorScale, suffixes)
+  hover.setLegendMarkerHandler()
 }
 
 document.getElementById('suffixInput').addEventListener('keydown', function (event) {

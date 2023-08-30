@@ -17,6 +17,7 @@ export function draw (color, suffixesArray) {
       .attr('width', 14)
       .attr('height', 20)
       .append('circle')
+      .attr('class', 'legend-circle')
       .attr('r', 5)
       .attr('cx', 6)
       .attr('cy', 11)
