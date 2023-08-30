@@ -23,6 +23,5 @@ export function filterBySuffixe (suffixes, data, projection) {
       }
     }
   })
-  console.log(data2)
   return data2
 }

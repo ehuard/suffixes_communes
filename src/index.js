@@ -37,14 +37,14 @@ function initMap () {
 /**
  * Draw the markers and the legend
  */
-function buildMap () {
+export function buildMap () {
   // Remove the existing maarkers and legend
   d3.select('.map').select('#marker-g').selectAll('circle').remove()
   d3.select('.legend').selectAll('.legend-marker').remove()
-
+  colorScale = map.colorDomain(suffixes)
   const data2 = preprocess.filterBySuffixe(suffixes, csvData, projection)
   map.mapMarkers(data2, colorScale, tip)
-  legend.draw(colorScale)
+  legend.draw(colorScale, suffixes)
 }
 
 document.getElementById('suffixInput').addEventListener('keydown', function (event) {
@@ -53,7 +53,6 @@ document.getElementById('suffixInput').addEventListener('keydown', function (eve
     const inputValue = textInput.value.trim()
     if (inputValue !== '') {
       suffixes.push(inputValue)
-      colorScale = map.colorDomain(suffixes)
       textInput.value = '' // Clear the input field
       buildMap() // Update the map
     }

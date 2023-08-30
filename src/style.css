@@ -16,6 +16,8 @@ h1 {
 .viz-container{
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  padding-right: 2em;
 }
 
 .legend-container{
@@ -26,8 +28,9 @@ h1 {
   font-family: "Roboto";
 }
 
-.legend-top{
-
+.top-legend{
+  margin-top: 2em;
+  margin-bottom: 0;
 }
 
 .legend-title{
@@ -49,26 +52,19 @@ h1 {
   flex:1;
 }
 
-[type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button {
-  height: auto;
+.remove-button{
+  color: red;
+  opacity:0.5;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-bottom: 4px;
+  padding-bottom: 4px;
+  margin-left: 4px;
 }
-
-[type="search"] {
-  -webkit-appearance: textfield;
-  outline-offset: -2px; 
-}
-
-[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-::-webkit-file-upload-button {
-  -webkit-appearance: button; 
-  font: inherit; 
-}
-
-[hidden] {
-  display: none;
+.remove-button:hover {
+  opacity: 1;
 }
 
 
