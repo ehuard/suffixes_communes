@@ -1,6 +1,6 @@
 # suffixes_communes
 
-Projet personnel qui permet de visualiser les communes de France selon les suffixes dans leur nom. J'ai considéré comme suffixe tout groupement de 2 à 4 lettres en fin d'un mot composant le nom de la commune. Par exemple, la commune Saint-Avold comporte les suffixes [aint, int, nt, vold, old, ld]. J'ai exploré les suffixes les plus populaires dans exploration.ipynb, et décidé de n'en garder que quelques uns pour la visualisation de départ. L'utilisateur peut lui même ajouter ou enlever des suffixes à la visualisation.
+Projet personnel qui permet de visualiser les communes de France selon les suffixes dans leur nom. J'ai considéré comme suffixe tout groupement de 2 à 5 lettres en fin d'un mot (au moins une lettre avant) composant le nom de la commune. Par exemple, la commune Saint-Avold comporte les suffixes [aint, int, nt, vold, old, ld]. J'ai exploré les suffixes les plus populaires dans exploration.ipynb, et décidé de n'en garder que quelques uns pour la visualisation de départ. L'utilisateur peut lui même ajouter ou enlever des suffixes à la visualisation.
 
 NB: Le nombre de couleurs différentes sur la carte est limitée à 10.
 
